@@ -1,26 +1,47 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import './App.css'
 import { ThemeContext } from './context/ContextAPi'
+import Navbar from './componets/Navbar'
+import Card from './componets/card'
 
 
 function App() {
 
-  const {name,setName}=useContext(ThemeContext)
+  // const {name,setName}=useContext(ThemeContext)
 
-  const toggle =()=> {
-    
-  }
+  // const toggle =()=> {
+  //   setName(name == "apon" ? "saleh" : "apon")
+  // }
 
 
-  function handleClick(){
-    setName("saleh")
-  }
+  // function handleClick(){
+  //   toggle()
+  // }
+
+
+  const [user,setUser]=useState([ ])
+  useEffect(()=>{
+    fetch('https://dummyjson.com/users')
+    .then(res => res.json())
+    .then((data)=> setUser(data.users));
+  },[])
+
+  
+
   return (
     <>
-      <div>
-        <h2>Name:{name} </h2>
-        <p className='p'></p>
-        <button onClick={handleClick}>fuck me</button>
+
+      <Navbar/>
+      <div className='flex justify-center flex-wrap gap-5 '>
+          {
+            user.map((item)=>(
+              <Card 
+                imges={item.image}
+                name={item.firstName}
+                />
+
+            ))
+          }
       </div>
     </>
   )
