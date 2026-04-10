@@ -1,14 +1,17 @@
 import { createContext, useState } from "react"
 
-export const AppProvider= createContext()
+export const ThemeContext = createContext()
+
+
 
 const ContextAPi = ({children}) => {
-    const [name,setName]=useState('apon')
+
+  const [name,setName]=useState("apon")
     
   return (
-    <AppProvider value={{name,setName}} >
-        {children}
-    </AppProvider>
+    <ThemeContext.Provider value={{name,setName}}>
+      {children}
+    </ThemeContext.Provider>
   )
 }
 

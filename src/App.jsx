@@ -1,21 +1,19 @@
 import { useContext } from 'react'
 import './App.css'
-import { AppProvider } from './context/ContextAPi'
+import { ThemeContext } from './context/ContextAPi'
 
 
 function App() {
 
-  const {name,setName} = useContext(AppProvider)
-  console.log(setName)
-   function handleClick () {
-    toggle('saleh')
-   }
+  const {name,setName}=useContext(ThemeContext)
+
+
   return (
     <>
       <div>
         <h2>Name:{name} </h2>
         <p className='p'></p>
-        <button onClick={handleClick}>click</button>
+        <button onClick={()=>setName({name:"John"})}>click</button>
       </div>
     </>
   )
