@@ -7,13 +7,20 @@ function App() {
 
   const {name,setName}=useContext(ThemeContext)
 
+  const toggle =()=> {
+    
+  }
 
+
+  function handleClick(){
+    setName("saleh")
+  }
   return (
     <>
       <div>
         <h2>Name:{name} </h2>
         <p className='p'></p>
-        <button onClick={()=>setName({name:"John"})}>click</button>
+        <button onClick={handleClick}>fuck me</button>
       </div>
     </>
   )

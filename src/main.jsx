@@ -6,8 +6,8 @@ import ContextAPi, { ThemeContext } from './context/ContextAPi.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ContextAPi.provider>
+    <ContextAPi>
       <App />
-    </ContextAPi.provider>
+    </ContextAPi>
   </StrictMode>,
 )
