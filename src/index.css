@@ -2,8 +2,17 @@
 @import "flowbite/src/themes/default";
 @import "tailwindcss";
 
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-sm:576px ;
+  --breakpoint-md:768px ;
+  --breakpoint-lg:992px ;
+  --breakpoint-xl:1170px ;
+}
 
-
+@utility container{
+  margin: auto;
+}
 .light {
   background: white;
   color: black;
@@ -13,3 +22,4 @@
   background: black;
   color: white;
 }
+

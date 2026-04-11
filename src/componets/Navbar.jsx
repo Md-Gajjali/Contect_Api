@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ThemeContext } from '../context/themeProvider'
 
 const Navbar = () => {
+  const { theme, toggle } = useContext(ThemeContext)
+  
   return (
-    <nav>
+    <nav className={`navbar ${theme}`}>
         <div className="container flex justify-between mx-auto py-10 items-center ">
             <h2>Navbar</h2>
             <ul className='flex gap-10'>
@@ -13,8 +16,9 @@ const Navbar = () => {
                 <li>login</li>
             </ul>
             <div>
-                
-                <button>click me</button>
+                <button onClick={toggle} className="theme-toggle-btn">
+                  {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
+                </button>
             </div>
         </div>
     </nav>
